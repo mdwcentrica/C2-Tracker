@@ -1,0 +1,213 @@
+{
+        "RisePro Stealer": [
+            "services.http.response.headers: (key: `Server` and value.headers: `RisePro`)",
+            "services.software.product:RisePro"
+        ],
+        "Viper C2": [
+            "services.software.product=`VIPER`"
+        ],
+        "Poseidon C2": [
+            "services.http.response.html_title=`POSEIDON`"
+        ],
+        "Scarab Botnet": [
+            "services.software.product=`Scarab`"
+        ],
+        "Cobalt Strike C2": [
+            "services.software.product=`Cobalt Strike`"
+        ],
+        "AsyncRAT": [
+            "services.software.product=`AsyncRAT`"
+        ],
+        "Supershell C2": [
+            "services.software.product=`Supershell`"
+        ],
+        "Hak5 Cloud C2": [
+            "services.software.product=`Cloud C2`"
+        ],
+        "Gh0st RAT Trojan": [
+            "services.service_name:`GHOST`"
+        ],
+        "DarkComet Trojan": [
+            "services.service_name:`DARKCOMET`"
+        ],
+        "DarkGate Loader": [
+            "services.service_name:`DARKGATE`"
+        ],
+        "Sliver C2": [
+            "services.software.product:`SLIVER`"
+        ],
+        "ShadowPad": [
+            "services.software.product:`SHADOWPAD`"
+        ],
+        "Mint Stealer": [
+            "services.software.product=`Mint Stealer`"
+        ],
+        "Mekotio Trojan": [
+            "services.software.product=`Mekotio`"
+        ],
+        "Gozi Trojan": [
+            "services.software.product=`Gozi`"
+        ],
+        "Browser Exploitation Framework (BeEF)": [
+            "services.software.product=`Browser Exploitation Framework (BeEF)`"
+        ],
+        "Mythic C2": [
+            "services.software.product:`Mythic`"
+        ],
+        "Vshell C2": [
+            "services.software: (vendor: Vshell and product: Vshell)",
+            "services.http.response.html_title:'Vshell - 登录'"
+        ],
+        "Hookbot": [
+            "services.software.product:`Hookbot`"
+        ],
+        "Quasar RAT": [
+            "services.software.product:`Quasar`"
+        ],
+        "Havoc C2": [
+            "services.software.product:`Havoc`"
+        ],
+        "Atlandida Stealer": [
+            "services: (http.response.html_title:`Atlantida` and http.response.body:`GY7HXsD.jpg`)"
+        ],
+        "VenomRAT": [
+            "services.software.product:VenomRAT"
+        ],
+        "Orcus RAT": [
+            "services.software.product:Orcus"
+        ],
+        "DcRAT": [
+            "services.software.product:DcRat"
+        ],
+        "Posh C2": [
+            "services.software.product:PoshC2"
+        ],
+        "Deimos C2": [
+            "services.software.product:DeimosC2"
+        ],
+        "Covenant C2": [
+            "services.software.product:Covenant"
+        ],
+        "BitRAT": [
+            "services.software.product:BitRAT"
+        ],
+        "BlackDolphin": [
+            "services.software.product:BlackDolphin"
+        ],
+        "Artemis RAT": [
+            "services.software.product:'Artemis Rat'"
+        ],
+        "Godzilla Loader": [
+            "services.software.product:godzilla-loader"
+        ],
+        "Jinx Loader": [
+            "services.software.product:JinxLoader"
+        ],
+        "Neptune Loader": [
+            "services.software.product:neptune-loader"
+        ],
+        "NimPlant C2": [
+            "services.software.product:NimPlant"
+        ],
+        "Ares RAT C2": [
+            "services.software.product:'Ares RAT'"
+        ],
+        "Villain C2": [
+            "services.banner='whoami\\n'"
+        ],
+        "SpyAgent": [
+            "services.http.response.html_title:'SpY-Agent v1.2'",
+            "services.software.product=`Spy-Agent`"
+        ],
+        "Dust RAT": [
+            "services.http.response.body:`Dust RAT v1.4.0`"
+        ],
+        "Pupy RAT": [
+            "services.software.product=`Pupy RAT`"
+        ],
+        "Remcos RAT": [
+            "services.software.product=Remcos"
+        ],
+        # https://www.team-cymru.com/post/botnet-7777-are-you-betting-on-a-compromised-router
+        "63256 Botnet": [
+            "services.port:63256 and services.banner_hashes='sha256:13e9b4b65e60bd9c8e58232591012fa6e2240a7b348ccdd611490e17d00b25f6'"
+        ],
+        "BYOB C2": [
+            "services.software.product:byob"
+        ],
+        "Meduza Stealer": [
+            "services.software.product:meduza-stealer"
+        ],
+        "Lumma Stealer": [
+            "services.software.product: lumma-stealer"
+        ],
+        "Bandit Stealer": [
+            "services.software.product: bandit-stealer"
+        ],
+        "Atomic Stealer": [
+            "services.software.product: atomic-stealer"
+        ],
+        "Serpent Stealer": [
+            "services.software.product: serpent-stealer"
+        ],
+        "Axile Stealer": [
+            "services.software.product: axile-stealer"
+        ],
+        "Vector Stealer": [
+            "services.software.product: vector-stealer"
+        ],
+        "Mint Stealer": [
+            "services.software.product: mint-stealer"
+        ],
+        "Z3us Stealer": [
+            "services.software.product: z3us-stealer"
+        ],
+        "Rastro Stealer": [
+            "services.software.product: rastro-stealer"
+        ],
+        "Darkeye Stealer": [
+            "services.software.product: darkeye-stealer"
+        ],
+        "Agniane Stealer": [
+            "services.software.product: agniane-stealer"
+        ],
+        "Epsilon Stealer": [
+            "services.software.product: epsilon-stealer"
+        ],
+        "Kaiji Botnet": [
+            "services.software.product: Kaiji"
+        ],
+        "MooBot Botnet": [
+            "services.software.product: MooBot"
+        ],
+        "Bahamut Stealer": [
+            "services.software.product: Bahamut"
+        ],
+        "Unam Web Panel": [
+            "services.software.product: UnamWebPanel"
+        ],
+        "Vidar Stealer": [
+            "services.software.product: Vidar"
+        ],
+        "BlackNet Botnet": [
+            "services.software.product:'BlackNET RAT'"
+        ],
+        "Kraken RAT": [
+            "services.software.product: kraken-rat"
+        ],
+        "Bumblebee Loader": [
+            "services.software.product: Bumblebee"
+        ],
+        "Viper RAT": [
+            "services.software.product: Viper"
+        ],
+        "EvilGinx": [
+            "services.software.product: EvilGinx"
+        ],
+        "GoPhish": [
+            "services.software.product: GoPhish"
+        ],
+        "EvilGoPhish": [
+            "services.software.product: EvilGoPhish"
+        ]
+    }
