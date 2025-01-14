@@ -1,4 +1,0 @@
-shodan
-python-dotenv
-censys
-pycti
