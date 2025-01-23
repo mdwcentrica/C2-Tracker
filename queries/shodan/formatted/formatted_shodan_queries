@@ -598,5 +598,11 @@
         "tag": "IOA,Lab",
         "malware_name": "Prysmax Stealer_1",
         "active": "no"
+    },
+    {
+        "query": "http.title:'Spectre Stealer - Login'",
+        "tag": "IOA,Lab",
+        "malware_name": "Spectre Stealer_1",
+        "active": "no"
     }
 ]
