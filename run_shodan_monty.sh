@@ -33,6 +33,6 @@ python3 "${SCRIPT_FILE}" --apikey "$SHODAN_API_KEY" --projectlabel "CTI-IOA" --q
 cd ${PROJECT_DIR}
 git add .
 git commit -m "Automated cron triggered update: ${DATE}"
-git push origin main
+git push origin centrica_fork_queries
 echo "Finished Shodan Query Manager at $(date)" >> "${LOG_DIR}/shodan_${DATE}.log"
 deactivate
