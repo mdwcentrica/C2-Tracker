@@ -1,607 +1,607 @@
 [
     {
         "query": "ssl.cert.serial:146473198",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_1",
         "active": "no"
     },
     {
         "query": "hash:-2007783223 port:50050",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_2",
         "active": "no"
     },
     {
         "query": "product:'Cobalt Strike Beacon'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_3",
         "active": "no"
     },
     {
         "query": "ssl:foren.zik",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_4",
         "active": "no"
     },
     {
         "query": "ssl:MetasploitSelfSignedCA",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-127886975",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_2",
         "active": "no"
     },
     {
         "query": "product:Metasploit",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_3",
         "active": "no"
     },
     {
         "query": "ssl:Covenant http.component:Blazor",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Covenant C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-737603591",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Covenant C2_2",
         "active": "no"
     },
     {
         "query": "product:Covenant",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Covenant C2_3",
         "active": "no"
     },
     {
         "query": "ssl:Mythic port:7443",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mythic C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-859291042",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mythic C2_2",
         "active": "no"
     },
     {
         "query": "product:Mythic",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mythic C2_3",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1957161625",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Brute Ratel C4_1",
         "active": "no"
     },
     {
         "query": "product:'Brute Ratel C4'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Brute Ratel C4_2",
         "active": "no"
     },
     {
         "query": "ssl:P18055077",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Posh C2_1",
         "active": "no"
     },
     {
         "query": "product:PoshC2",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Posh C2_2",
         "active": "no"
     },
     {
         "query": "http.html_hash:855112502",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Posh C2_3",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1700067737",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Posh C2_4",
         "active": "no"
     },
     {
         "query": "ssl:multiplayer ssl.cert.issuer.cn:operators",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Sliver C2_1",
         "active": "no"
     },
     {
         "query": "product:'Sliver C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Sliver C2_2",
         "active": "no"
     },
     {
         "query": "http.html_hash:-14029177",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Deimos C2_1",
         "active": "no"
     },
     {
         "query": "product:'Deimos C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Deimos C2_2",
         "active": "no"
     },
     {
         "query": "http.html:PANDA http.html:layui",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "PANDA C2_1",
         "active": "no"
     },
     {
         "query": "product:'Panda C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "PANDA C2_2",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1258014549",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "NimPlant C2_1",
         "active": "no"
     },
     {
         "query": "X-Havoc: true",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Havoc C2_1",
         "active": "no"
     },
     {
         "query": "product:Havoc",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Havoc C2_2",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-636718605",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Caldera C2_1",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1702274888",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Caldera C2_2",
         "active": "no"
     },
     {
         "query": "http.title:'Login | CALDERA'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Caldera C2_3",
         "active": "no"
     },
     {
         "query": "http.title:'Gophish - Login'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "GoPhish_1",
         "active": "no"
     },
     {
         "query": "http.html:'AcidRain Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "AcidRain Stealer_1",
         "active": "no"
     },
     {
         "query": "http.title:misha http.component:UIKit",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Misha Stealer_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:274603478",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Patriot Stealer_1",
         "active": "no"
     },
     {
         "query": "http.html:patriotstealer",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Patriot Stealer_2",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-1236243965",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "RAXNET Bitcoin Stealer_1",
         "active": "no"
     },
     {
         "query": "http.html:'Titan Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Titan Stealer_1",
         "active": "no"
     },
     {
         "query": "http.html:'Collector Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Collector Stealer_1",
         "active": "no"
     },
     {
         "query": "http.html:getmineteam",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Collector Stealer_2",
         "active": "no"
     },
     {
         "query": "product:'Collector Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Collector Stealer_3",
         "active": "no"
     },
     {
         "query": "http.title:'Mystic Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mystic Stealer_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-442056565",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mystic Stealer_2",
         "active": "no"
     },
     {
         "query": "http.title:'Gotham Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Gotham Stealer_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-1651875345",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Gotham Stealer_2",
         "active": "no"
     },
     {
         "query": "http.html_hash:1368396833",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Meduza Stealer_1",
         "active": "no"
     },
     {
         "query": "http.title:'Meduza Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Meduza Stealer_2",
         "active": "no"
     },
     {
         "query": "http.html:XMRig",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "XMRig Monero Cryptominer_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-782317534",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "XMRig Monero Cryptominer_2",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:1088998712",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "XMRig Monero Cryptominer_3",
         "active": "no"
     },
     {
         "query": "hash:1357418825",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "7777 Botnet_1",
         "active": "no"
     },
     {
         "query": "product:'Quasar RAT'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Quasar RAT_1",
         "active": "no"
     },
     {
         "query": "product:ShadowPad",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "ShadowPad_1",
         "active": "no"
     },
     {
         "query": "product:AsyncRAT",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "AsyncRAT_1",
         "active": "no"
     },
     {
         "query": "product:DcRat",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "DcRAT_1",
         "active": "no"
     },
     {
         "query": "product:BitRAT",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "BitRAT_1",
         "active": "no"
     },
     {
         "query": "product:'Empire C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Empire C2_1",
         "active": "no"
     },
     {
         "query": "product:'DarkComet Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "DarkComet Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'XtremeRAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "XtremeRAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'NanoCore RAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "NanoCore RAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'Gh0st RAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Gh0st RAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'DarkTrack RAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "DarkTrack RAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'njRAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "njRAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'Remcos Pro RAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Remcos RAT_1",
         "active": "no"
     },
     {
         "query": "product:'Poison Ivy Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Poison Ivy Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'Orcus RAT Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Orcus RAT Trojan_1",
         "active": "no"
     },
     {
         "query": "product:'Ares RAT C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Ares RAT C2_1",
         "active": "no"
     },
     {
         "query": "product:'ZeroAccess Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "ZeroAccess Trojan_1",
         "active": "no"
     },
     {
         "query": "http.title:'Hookbot Panel'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Hookbot_1",
         "active": "no"
     },
     {
         "query": "product:'Hak5 Cloud C2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Hak5 Cloud C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:1294130019",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Hak5 Cloud C2_2",
         "active": "no"
     },
     {
         "query": "http.title:'BlackNet - Login'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "BlackNET Botnet_1",
         "active": "no"
     },
     {
         "query": "http.title:'Doxerina BotNet'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Doxerina Botnet_1",
         "active": "no"
     },
     {
         "query": "'Server: RisePro'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "RisePro Stealer_1",
         "active": "no"
     },
     {
         "query": "ssl:Pantegana ssl:localhost",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Pantegana C2_1",
         "active": "no"
     },
     {
         "query": "ssl.cert.issuer.cn:'Pantegana Root CA'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Pantegana C2_2",
         "active": "no"
     },
     {
         "query": "http.html_hash:84573275",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:-1010228102",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_2",
         "active": "no"
     },
     {
         "query": "http.title:'Supershell - \u767b\u5f55'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_3",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1250764086",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Viper C2_1",
         "active": "no"
     },
     {
         "query": "http.favicon.hash:219045137",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Poseidon C2_1",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1139460879",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Poseidon C2_2",
         "active": "no"
     },
     {
         "query": "hash:799564296",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Poseidon C2_3",
         "active": "no"
     },
     {
         "query": "http.title:'Scarab Botnet PANEL'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Scarab Botnet_1",
         "active": "no"
     },
     {
         "query": "http.title:Login http.html:'Welcome to Bandit' 'Content-Length: 4125' port:8080",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Bandit Stealer_1",
         "active": "no"
     },
     {
         "query": "product:'NetBus Trojan'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "NetBus Trojan_1",
         "active": "no"
     },
     {
         "query": "html:unam_lib.js http.favicon.hash:-1278680098,-1531496738",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Unam Web Panel_1",
         "active": "no"
     },
     {
         "query": "http.title:'Unam Web Panel &mdash; Login'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Unam Web Panel_2",
         "active": "no"
     },
     {
         "query": "http.title:'Atlantida' http.html:'GY7HXsD.jpg'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Atlandida Stealer_1",
         "active": "no"
     },
     {
         "query": "http.title:'Vshell - \u767b\u5f55'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Vshell C2_1",
         "active": "no"
     },
     {
         "query": "product:BurpSuite",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "BurpSuite_1",
         "active": "no"
     },
     {
         "query": "product:'Hachcat Cracking Tool'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Hachcat_1",
         "active": "no"
     },
     {
         "query": "http.title:'Mobile Security Framework - MobSF'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "MobSF_1",
         "active": "no"
     },
     {
         "query": "hash:856668804",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Villain C2_1",
         "active": "no"
     },
     {
         "query": "http.title:'SpY-Agent v1.2'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "SpyAgent_1",
         "active": "no"
     },
     {
         "query": "http.status:307 http:'307 Temporary Redirect Content-Type: text/html; charset=utf-8 Location: https://360.net'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "RedGuard C2_1",
         "active": "no"
     },
     {
         "query": "http.headers_hash:1955818171 http.html_hash:114440660",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "SpiceRAT_1",
         "active": "no"
     },
     {
         "query": "http.html_hash:-51903740",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Oyster C2_1",
         "active": "no"
     },
     {
         "query": "http.html_hash:-1245370368",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Mozi Botnet_1",
         "active": "no"
     },
     {
         "query": "http.title:'Prysmax Stealer'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Prysmax Stealer_1",
         "active": "no"
     },
     {
         "query": "http.title:'Spectre Stealer - Login'",
-        "tag": "IOA,Lab",
+        "tag": "IOA,Lab,Monty",
         "malware_name": "Spectre Stealer_1",
         "active": "no"
     }

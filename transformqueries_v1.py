@@ -35,7 +35,7 @@ def transform_data(data):
         for idx, query in enumerate(queries, 1):
             result.append({
                 "query": query,
-                "tag": "IOA,Lab",
+                "tag": "IOA,Lab,Monty",
                 "malware_name": f"{malware_name}_{idx}",
                 "active": "no"
             })
