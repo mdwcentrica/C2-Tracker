@@ -15,7 +15,7 @@
         "query": "product:'Cobalt Strike Beacon'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_3",
-        "active": "yes"
+        "active": "no"
     },
     {
         "query": "ssl:foren.zik",
@@ -27,7 +27,7 @@
         "query": "ssl:MetasploitSelfSignedCA",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-127886975",
