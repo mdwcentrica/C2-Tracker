@@ -2,6 +2,7 @@
 
 # Set script directory
 SCRIPT_DIR="/home/azureuser/scripts"
+SCRIPT_FILE="${SCRIPT_DIR}/shodan_query_manager_monty.py"
 PROJECT_DIR="/home/azureuser/projects/Monty"
 DATA_DIR="${PROJECT_DIR}/data"
 QUERIES_DIR="${PROJECT_DIR}/queries/shodan/formatted"
@@ -28,9 +29,10 @@ cd ${PROJECT_DIR}
 git pull --rebase origin centrica_fork_queries
 cd ${SCRIPT_DIR}
 source advinfra_env/bin/activate
-python3 shodan_query_manager_monty.py --apikey "$SHODAN_API_KEY" --projectlabel "CTI-IOA" --queries "${QUERIES_FILE}" 2>&1 | tee -a "${LOG_DIR}/shodan_new_${DATE}.log"
+python3 "${SCRIPT_FILE}" --apikey "$SHODAN_API_KEY" --projectlabel "CTI-IOA" --queries "${QUERIES_FILE}" 2>&1 | tee -a "${LOG_DIR}/shodan_new_${DATE}.log"
 cd ${PROJECT_DIR}
 git add .
 git commit -m "Automated cron triggered update: ${DATE}"
 git push origin main
 echo "Finished Shodan Query Manager at $(date)" >> "${LOG_DIR}/shodan_${DATE}.log"
+deactivate
