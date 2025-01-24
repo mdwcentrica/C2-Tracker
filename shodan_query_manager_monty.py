@@ -103,6 +103,9 @@ class ShodanQueryManager:
         """
         today = datetime.now().strftime('%Y-%m-%d')
         previously_seen_ips = set(existing_ips_df['ip'].values)
+        print(f"previously seen ips ips df is ${previously_seen_ips}")
+        print(f"newresultsdf is ${new_results_df}")
+        print('ok here')
 
         # Combine existing and new IPs, tracking unique entries
         for _, row in new_results_df.iterrows():
@@ -112,6 +115,7 @@ class ShodanQueryManager:
 
             # Check if IP exists in existing DataFrame
             ip_exists = existing_ips_df['ip'].eq(ip)
+            print(f"ip exists ${ip_exists}")
 
             if ip_exists.any():
                 # Update existing IP entry
@@ -145,7 +149,7 @@ class ShodanQueryManager:
 
         return existing_ips_df, previously_seen_ips
 
-    def load_queries(self, queries_file='queries.json'):
+    def load_queries(self, queries_file='/home/azureuser/projects/Monty/queries/shodan/formatted/formatted_shodan_queries'):
         """
         Load Shodan queries from JSON file with robust error handling
         """
