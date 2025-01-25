@@ -103,9 +103,6 @@ class ShodanQueryManager:
         """
         today = datetime.now().strftime('%Y-%m-%d')
         previously_seen_ips = set(existing_ips_df['ip'].values)
-        print(f"previously seen ips ips df is ${previously_seen_ips}")
-        print(f"newresultsdf is ${new_results_df}")
-        print('ok here')
 
         # Combine existing and new IPs, tracking unique entries
         for _, row in new_results_df.iterrows():
