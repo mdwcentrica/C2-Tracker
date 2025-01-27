@@ -27,7 +27,7 @@
         "query": "ssl:MetasploitSelfSignedCA",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_1",
-        "active": "yes"
+        "active": "no"
     },
     {
         "query": "http.favicon.hash:-127886975",
@@ -345,43 +345,43 @@
         "query": "product:'DarkComet Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "DarkComet Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'XtremeRAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "XtremeRAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'NanoCore RAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "NanoCore RAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Gh0st RAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Gh0st RAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'DarkTrack RAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "DarkTrack RAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'njRAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "njRAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Remcos Pro RAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Remcos RAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Poison Ivy Trojan'",
@@ -459,19 +459,19 @@
         "query": "http.html_hash:84573275",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-1010228102",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Supershell - \u767b\u5f55'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Supershell C2_3",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html_hash:-1250764086",
@@ -561,48 +561,48 @@
         "query": "hash:856668804",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Villain C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'SpY-Agent v1.2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "SpyAgent_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.status:307 http:'307 Temporary Redirect Content-Type: text/html; charset=utf-8 Location: https://360.net'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "RedGuard C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.headers_hash:1955818171 http.html_hash:114440660",
         "tag": "IOA,Lab,Monty",
         "malware_name": "SpiceRAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html_hash:-51903740",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Oyster C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html_hash:-1245370368",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Mozi Botnet_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Prysmax Stealer'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Prysmax Stealer_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Spectre Stealer - Login'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Spectre Stealer_1",
-        "active": "no"
+        "active": "yes"
     }
 ]
