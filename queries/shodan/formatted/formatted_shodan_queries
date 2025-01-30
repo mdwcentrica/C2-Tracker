@@ -3,7 +3,7 @@
         "query": "ssl.cert.serial:146473198",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "hash:-2007783223 port:50050",
@@ -21,13 +21,13 @@
         "query": "ssl:foren.zik",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Cobalt Strike C2_4",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "ssl:MetasploitSelfSignedCA",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-127886975",
@@ -123,7 +123,7 @@
         "query": "product:'Sliver C2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Sliver C2_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html_hash:-14029177",
@@ -135,7 +135,7 @@
         "query": "product:'Deimos C2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Deimos C2_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html:PANDA http.html:layui",
@@ -147,7 +147,7 @@
         "query": "product:'Panda C2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "PANDA C2_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html_hash:-1258014549",
@@ -159,13 +159,13 @@
         "query": "X-Havoc: true",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Havoc C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:Havoc",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Havoc C2_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-636718605",
@@ -183,13 +183,13 @@
         "query": "http.title:'Login | CALDERA'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Caldera C2_3",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Gophish - Login'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "GoPhish_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html:'AcidRain Stealer'",
@@ -243,13 +243,13 @@
         "query": "product:'Collector Stealer'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Collector Stealer_3",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Mystic Stealer'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Mystic Stealer_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-442056565",
@@ -261,7 +261,7 @@
         "query": "http.title:'Gotham Stealer'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Gotham Stealer_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:-1651875345",
@@ -279,7 +279,7 @@
         "query": "http.title:'Meduza Stealer'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Meduza Stealer_2",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.html:XMRig",
@@ -309,31 +309,31 @@
         "query": "product:'Quasar RAT'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Quasar RAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:ShadowPad",
         "tag": "IOA,Lab,Monty",
         "malware_name": "ShadowPad_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:AsyncRAT",
         "tag": "IOA,Lab,Monty",
         "malware_name": "AsyncRAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:DcRat",
         "tag": "IOA,Lab,Monty",
         "malware_name": "DcRAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:BitRAT",
         "tag": "IOA,Lab,Monty",
         "malware_name": "BitRAT_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Empire C2'",
@@ -387,37 +387,37 @@
         "query": "product:'Poison Ivy Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Poison Ivy Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Orcus RAT Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Orcus RAT Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Ares RAT C2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Ares RAT C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'ZeroAccess Trojan'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "ZeroAccess Trojan_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Hookbot Panel'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Hookbot_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:'Hak5 Cloud C2'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Hak5 Cloud C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.favicon.hash:1294130019",
@@ -429,7 +429,7 @@
         "query": "http.title:'BlackNet - Login'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "BlackNET Botnet_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "http.title:'Doxerina BotNet'",
@@ -441,7 +441,7 @@
         "query": "'Server: RisePro'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "RisePro Stealer_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "ssl:Pantegana ssl:localhost",
@@ -537,7 +537,7 @@
         "query": "http.title:'Vshell - \u767b\u5f55'",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Vshell C2_1",
-        "active": "no"
+        "active": "yes"
     },
     {
         "query": "product:BurpSuite",
