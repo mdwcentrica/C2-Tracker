@@ -313,7 +313,8 @@ class ShodanQueryManager:
         updated_seen_ips_df, previously_seen_ips = self.update_seen_ips(all_results_df, seen_ips_df)
 
         # Filter out previously seen IPs from results
-        new_results_df = all_results_df[~all_results_df['ip'].isin(previously_seen_ips)]
+        #new_results_df = all_results_df[~all_results_df['ip'].isin(previously_seen_ips)]
+        new_results_df = all_results_df.copy()
 
         # Save results and updated IP tracking
         try:
