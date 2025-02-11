@@ -202,7 +202,7 @@ class ShodanQueryManager:
                     page_results = self.api.search(
                         query_str,
                         page=page,
-                        limit=min(100, total_results_limit // pages_limit)
+                        limit=min(1000, total_results_limit // pages_limit)
                     )
 
                     page_matches = page_results.get('matches', [])
@@ -257,7 +257,7 @@ class ShodanQueryManager:
                             }
 
                     # Break if no more results
-                    if len(page_matches) < 100:
+                    if len(page_matches) < 1000:
                         break
 
                 except shodan.APIError as page_error:
