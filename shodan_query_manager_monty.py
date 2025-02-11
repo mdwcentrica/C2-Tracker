@@ -40,8 +40,12 @@ class ShodanQueryManager:
                 'total_results_limit': 1000,
                 'pages_limit': 10
             }
+            'enterprise': {
+                'total_results_limit': 100000,
+                'pages_limit': 100
+            }
         }
-        self.current_subscription = 'basic'
+        self.current_subscription = 'enterprise'
 
     def initialize_shodan_client(self):
         """
