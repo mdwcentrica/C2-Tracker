@@ -45,7 +45,7 @@ class ShodanQueryManager:
                 'pages_limit': 100
             }
         }
-        self.current_subscription = 'enterprise'
+        self.current_subscription = 'corporate'
 
     def initialize_shodan_client(self):
         """
@@ -59,7 +59,7 @@ class ShodanQueryManager:
             if account_info.get('plan', '').lower() == 'freelancer':
                 self.current_subscription = 'freelancer'
                 logging.info("Detected Freelancer subscription")
-            elif account_info.get('plan', '').lower() == 'enterprise':
+            elif account_info.get('plan', '').lower() == 'corporate':
                 self.current_subscription = 'corporate'
                 logging.info("Detected Corporate subscription")
             else:
