@@ -40,7 +40,7 @@ class ShodanQueryManager:
                 'total_results_limit': 1000,
                 'pages_limit': 10
             },
-            'enterprise': {
+            'corporate': {
                 'total_results_limit': 100000,
                 'pages_limit': 100
             }
@@ -59,6 +59,9 @@ class ShodanQueryManager:
             if account_info.get('plan', '').lower() == 'freelancer':
                 self.current_subscription = 'freelancer'
                 logging.info("Detected Freelancer subscription")
+            elif account_info.get('plan', '').lower() == 'enterprise':
+                self.current_subscription = 'corporate'
+                logging.info("Detected Corporate subscription")
             else:
                 logging.info("Detected Basic subscription")
 
