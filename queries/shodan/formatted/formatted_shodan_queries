@@ -39,7 +39,7 @@
         "query": "product:Metasploit",
         "tag": "IOA,Lab,Monty",
         "malware_name": "Metasploit Framework C2_3",
-        "active": "yes"
+        "active": "no"
     },
     {
         "query": "ssl:Covenant http.component:Blazor",
