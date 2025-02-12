@@ -1,34 +1,51 @@
 import argparse
 import shodan
+import time
 
 def test_shodan_query(api_key, query_str):
     """
-    Test a single Shodan query and print raw response for debugging
+    Test a single Shodan query and print all results with pagination
     """
     api = shodan.Shodan(api_key)
     try:
-        # Print the query we're testing
         print(f"\nTesting query: {query_str}")
+        
+        # Get total results count first
+        initial_response = api.search(query_str, page=1, limit=1)
+        total_available = initial_response.get('total', 0)
+        print(f"\nTotal results available according to Shodan: {total_available}")
         
         # Initialize empty list for all results
         total_results = []
-
-        # Get up to 10 pages of 100 results each
-        for page in range(1, 11):
+        page = 1
+        
+        # Continue fetching pages until no more results or hit page 10
+        while page <= 10:
             print(f"\nFetching page {page}...")
-            response = api.search(query_str, page=page, limit=100, fields=['ip_str', 'port', 'location.country_name', 'org', 'isp', 'hostnames'])
-            
-            matches = response.get('matches', [])
-            total_results.extend(matches)
-            
-            print(f"Found {len(matches)} results on this page")
-            
-            # If we got less than 100 results, we've hit the end
-            if len(matches) < 100:
+            try:
+                response = api.search(query_str, page=page, limit=100, 
+                                    fields=['ip_str', 'port', 'location.country_name', 
+                                           'org', 'isp', 'hostnames'])
+                
+                matches = response.get('matches', [])
+                if not matches:  # If no results in this page, we're done
+                    print(f"No results found on page {page}, stopping pagination")
+                    break
+                    
+                total_results.extend(matches)
+                print(f"Found {len(matches)} results on page {page}")
+                print(f"Running total: {len(total_results)}")
+                
+                page += 1
+                time.sleep(1)  # Rate limiting precaution
+                
+            except shodan.APIError as e:
+                print(f"Error on page {page}: {str(e)}")
                 break
 
-        print(f"\nTotal results collected: {len(total_results)}")
-        print("\nAll results:")
+        # Final results output
+        print(f"\nFinal total results collected: {len(total_results)}")
+        print("\nShowing all results:")
         for i, match in enumerate(total_results, 1):
             print(f"\nResult {i}:")
             print(f"IP: {match.get('ip_str', '')}")
