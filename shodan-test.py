@@ -4,22 +4,22 @@ import time
 
 SHODAN_COUNT_URL = "https://api.shodan.io/shodan/host/count"
 SHODAN_SEARCH_URL = "https://api.shodan.io/shodan/host/search"
-RESULTS_PER_PAGE = 100  # Shodan returns up to 100 results per page
-SLEEP_TIME = 2  # Adjust sleep to avoid API rate limits
+RESULTS_PER_PAGE = 100  # Max results per page
+SLEEP_TIME = 2  # Sleep time to respect API limits
 
 def get_total_results(api_key, query):
-    """ Get total results count from Shodan """
+    """ Get the total number of results for a query using Shodan's count endpoint. """
     params = {"key": api_key, "query": query}
     response = requests.get(SHODAN_COUNT_URL, params=params)
 
     if response.status_code == 200:
         return response.json().get("total", 0)
-    
+
     print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
     return 0
 
 def shodan_search(api_key, query):
-    """ Perform paginated Shodan search and collect unique results """
+    """ Perform paginated Shodan search while collecting unique IPs. """
     unique_ips = {}
     total_results = get_total_results(api_key, query)
     
@@ -31,6 +31,7 @@ def shodan_search(api_key, query):
     print(f"Total Results: {total_results}")
     print(f"Paging through {total_pages} pages...\n")
 
+    # Loop through all required pages
     for page in range(1, total_pages + 1):
         print(f"Fetching Page {page}/{total_pages}...")
 
@@ -41,7 +42,7 @@ def shodan_search(api_key, query):
         }
 
         response = requests.get(SHODAN_SEARCH_URL, params=params)
-        
+
         if response.status_code != 200:
             print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
             break
@@ -50,8 +51,8 @@ def shodan_search(api_key, query):
         matches = data.get("matches", [])
 
         if not matches:
-            print("No more results available.")
-            break
+            print(f"⚠️ No data returned for Page {page}. Stopping early.")
+            break  # Prevent unnecessary looping if API stops returning results
 
         for match in matches:
             ip = match.get("ip_str", "")
@@ -66,12 +67,9 @@ def shodan_search(api_key, query):
                 }
 
         print(f"Collected {len(unique_ips)} unique IPs so far.")
-        
-        # Stop if this was the last page of results
-        if len(matches) < RESULTS_PER_PAGE:
-            break
 
-        time.sleep(SLEEP_TIME)  # Respect API limits
+        # Respect API rate limits
+        time.sleep(SLEEP_TIME)
 
     print("\nFinal Results:")
     print(f"Total Unique IPs Found: {len(unique_ips)}\n")
