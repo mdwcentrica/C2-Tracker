@@ -11,19 +11,20 @@ def test_shodan_query(api_key, query_str):
         print(f"\nTesting query: {query_str}")
         
         # Get total results count first
-        initial_response = api.search(query_str, page=1, limit=1)
+        initial_response = api.search(query_str, page=1, limit=1, minify=False)
         total_available = initial_response.get('total', 0)
         print(f"\nTotal results available according to Shodan: {total_available}")
         
-        # Initialize empty list for all results
+        # Initialize empty list for all results and set for unique IPs
         total_results = []
+        unique_ips = set()
         page = 1
         
         # Continue fetching pages until no more results or hit page 10
         while page <= 10:
             print(f"\nFetching page {page}...")
             try:
-                response = api.search(query_str, page=page, limit=100, minify='false',
+                response = api.search(query_str, page=page, limit=100, minify=False,
                                     fields=['ip_str', 'port', 'location.country_name', 
                                            'org', 'isp', 'hostnames'])
                 
@@ -31,10 +32,16 @@ def test_shodan_query(api_key, query_str):
                 if not matches:  # If no results in this page, we're done
                     print(f"No results found on page {page}, stopping pagination")
                     break
-                    
-                total_results.extend(matches)
+                
+                # Only add results with new IPs
+                for match in matches:
+                    ip = match.get('ip_str', '')
+                    if ip and ip not in unique_ips:
+                        unique_ips.add(ip)
+                        total_results.append(match)
+                
                 print(f"Found {len(matches)} results on page {page}")
-                print(f"Running total: {len(total_results)}")
+                print(f"Unique IPs so far: {len(unique_ips)}")
                 
                 page += 1
                 time.sleep(1)  # Rate limiting precaution
@@ -44,8 +51,8 @@ def test_shodan_query(api_key, query_str):
                 break
 
         # Final results output
-        print(f"\nFinal total results collected: {len(total_results)}")
-        print("\nShowing all results:")
+        print(f"\nFinal total unique IPs collected: {len(total_results)}")
+        print("\nShowing all unique results:")
         for i, match in enumerate(total_results, 1):
             print(f"\nResult {i}:")
             print(f"IP: {match.get('ip_str', '')}")
