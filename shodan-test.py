@@ -1,6 +1,7 @@
 import argparse
 import requests
 import time
+import json
 
 SHODAN_COUNT_URL = "https://api.shodan.io/shodan/host/count"
 SHODAN_SEARCH_URL = "https://api.shodan.io/shodan/host/search"
@@ -10,13 +11,13 @@ SLEEP_TIME = 2  # Sleep time to respect API limits
 def get_total_results(api_key, query):
     """ Get the total number of results for a query using Shodan's count endpoint. """
     params = {"key": api_key, "query": query}
-    response = requests.get(SHODAN_COUNT_URL, params=params)
-
-    if response.status_code == 200:
+    try:
+        response = requests.get(SHODAN_COUNT_URL, params=params)
+        response.raise_for_status()
         return response.json().get("total", 0)
-
-    print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
-    return 0
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching total results: {e}")
+        return 0
 
 def shodan_search(api_key, query):
     """ Perform paginated Shodan search while collecting unique IPs. """
@@ -31,7 +32,6 @@ def shodan_search(api_key, query):
     print(f"Total Results: {total_results}")
     print(f"Paging through {total_pages} pages...\n")
 
-    # Loop through all required pages
     for page in range(1, total_pages + 1):
         print(f"Fetching Page {page}/{total_pages}...")
 
@@ -41,35 +41,39 @@ def shodan_search(api_key, query):
             "page": page
         }
 
-        response = requests.get(SHODAN_SEARCH_URL, params=params)
+        try:
+            response = requests.get(SHODAN_SEARCH_URL, params=params)
+            response.raise_for_status()  # Raise an error for bad responses
+            data = response.json()
+        except (requests.exceptions.RequestException, json.JSONDecodeError) as e:
+            print(f"Error processing page {page}: {e}")
+            continue  # Skip this page and move to the next
 
-        if response.status_code != 200:
-            print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
-            break
-
-        data = response.json()
         matches = data.get("matches", [])
 
         if not matches:
-            print(f"⚠️ No data returned for Page {page}. Stopping early.")
-            break  # Prevent unnecessary looping if API stops returning results
+            print(f"⚠️ No data returned for Page {page}. Moving on.")
+            continue
 
         for match in matches:
-            ip = match.get("ip_str", "")
-            if ip and ip not in unique_ips:  # Store first occurrence only
-                unique_ips[ip] = {
-                    "IP": ip,
-                    "Port": match.get("port", ""),
-                    "Country": match.get("location", {}).get("country_name", ""),
-                    "Org": match.get("org", ""),
-                    "ISP": match.get("isp", ""),
-                    "Hostnames": match.get("hostnames", [])
-                }
+            try:
+                ip = match.get("ip_str", "")
+                if ip and ip not in unique_ips:  # Store first occurrence only
+                    unique_ips[ip] = {
+                        "IP": ip,
+                        "Port": match.get("port", ""),
+                        "Country": match.get("location", {}).get("country_name", ""),
+                        "Org": match.get("org", ""),
+                        "ISP": match.get("isp", ""),
+                        "Hostnames": match.get("hostnames", [])
+                    }
+            except Exception as ip_error:
+                print(f"Skipping problematic IP entry: {ip_error}")
+                continue  # Skip this IP and move to the next
 
         print(f"Collected {len(unique_ips)} unique IPs so far.")
 
-        # Respect API rate limits
-        time.sleep(SLEEP_TIME)
+        time.sleep(SLEEP_TIME)  # Respect API rate limits
 
     print("\nFinal Results:")
     print(f"Total Unique IPs Found: {len(unique_ips)}\n")
