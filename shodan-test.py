@@ -23,7 +23,7 @@ def test_shodan_query(api_key, query_str):
         while page <= 10:
             print(f"\nFetching page {page}...")
             try:
-                response = api.search(query_str, page=page, limit=100, 
+                response = api.search(query_str, page=page, limit=100, minify='false',
                                     fields=['ip_str', 'port', 'location.country_name', 
                                            'org', 'isp', 'hostnames'])
                 
