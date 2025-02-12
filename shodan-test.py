@@ -8,6 +8,7 @@ def shodan_search(api_key, query):
     unique_ips = set()
     page = 1
     total_results = 0
+    results_per_page = 100  # Default Shodan page size
 
     while True:
         params = {
@@ -24,30 +25,31 @@ def shodan_search(api_key, query):
 
         data = response.json()
 
-        if "matches" not in data:
-            print("No results found.")
-            break
-
-        if page == 1:
+        if page == 1:  # Extract total results on the first page
             total_results = data.get("total", 0)
+            total_pages = (total_results // results_per_page) + (1 if total_results % results_per_page > 0 else 0)
             print(f"Total Results: {total_results}")
-            total_pages = (total_results // 100) + (1 if total_results % 100 > 0 else 0)
             print(f"Total Pages: {total_pages}")
+
+        if "matches" not in data or not data["matches"]:
+            print("No more results available.")
+            break
 
         for result in data["matches"]:
             unique_ips.add(result["ip_str"])
 
-        print(f"Page {page} processed. Total unique IPs so far: {len(unique_ips)}")
+        print(f"Processed Page {page}. Total unique IPs collected: {len(unique_ips)}")
 
-        if len(data["matches"]) < 100:  # Last page reached
+        # Check if we've reached the last page
+        if len(data["matches"]) < results_per_page:
             break
 
         page += 1
-        time.sleep(1)  # Rate limiting to avoid API bans
+        time.sleep(1)  # Avoid hitting API rate limits
 
     print("\nFinal Results:")
     print(f"Total Unique IPs Found: {len(unique_ips)}")
-    for ip in unique_ips:
+    for ip in sorted(unique_ips):
         print(ip)
 
 if __name__ == "__main__":
