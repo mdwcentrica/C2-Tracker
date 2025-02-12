@@ -10,23 +10,23 @@ import pandas as pd
 import shodan
 
 class ShodanQueryManager:
-    def __init__(self, api_key, ips_file='seen_ips.csv', project_label=None):
+    def __init__(self, api_key, project_label=None):
         """
         Initialize Shodan Query Manager with IP tracking
 
         :param api_key: Shodan API key
-        :param ips_file: CSV file to track seen IPs
+        #:param ips_file: CSV file to track seen IPs
         :param project_label: Optional project label for results
         """
         # Setup logging
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s: %(message)s',
-            filename='shodan_query.log'
+            filename='/home/azureuser/projects/Monty/logs/shodan_query.log'
         )
 
         self.api_key = api_key
-        self.ips_file = ips_file
+        #self.ips_file = ips_file
         self.project_label = project_label
         self.api = self.initialize_shodan_client()
 
@@ -40,12 +40,12 @@ class ShodanQueryManager:
                 'total_results_limit': 1000,
                 'pages_limit': 10
             },
-            'corporate': {
+            'corp': {
                 'total_results_limit': 100000,
                 'pages_limit': 100
             }
         }
-        self.current_subscription = 'corporate'
+        self.current_subscription = 'corp'
 
     def initialize_shodan_client(self):
         """
@@ -59,8 +59,8 @@ class ShodanQueryManager:
             if account_info.get('plan', '').lower() == 'freelancer':
                 self.current_subscription = 'freelancer'
                 logging.info("Detected Freelancer subscription")
-            elif account_info.get('plan', '').lower() == 'corporate':
-                self.current_subscription = 'corporate'
+            elif account_info.get('plan', '').lower() == 'corp':
+                self.current_subscription = 'corp'
                 logging.info("Detected Corporate subscription")
             else:
                 logging.info("Detected Basic subscription")
@@ -69,7 +69,7 @@ class ShodanQueryManager:
         except shodan.APIError as e:
             logging.error(f"Shodan API Error during initialization: {e}")
             raise
-
+    '''
     def load_or_create_seen_ips(self):
         """
         Load existing seen IPs or create a new DataFrame
@@ -152,6 +152,7 @@ class ShodanQueryManager:
                 existing_ips_df = pd.concat([existing_ips_df, new_entry], ignore_index=True)
 
         return existing_ips_df, previously_seen_ips
+    '''
 
     def load_queries(self, queries_file='/home/azureuser/projects/Monty/queries/shodan/formatted/formatted_shodan_queries'):
         """
@@ -292,7 +293,7 @@ class ShodanQueryManager:
             logging.error(f"Unexpected error processing query '{query_str}': {e}")
             return pd.DataFrame()
 
-    def run_queries(self, queries_file='formatted_shodan_queries.json', output_dir='queries/shodan/formatted/'):
+    def run_queries(self, queries_file='formatted_shodan_queries', output_dir='queries/shodan/formatted/'):
         """
         Run Shodan queries, track IPs, and save results
         """
@@ -303,12 +304,12 @@ class ShodanQueryManager:
         queries = self.load_queries(queries_file)
 
         # Load existing seen IPs
-        seen_ips_df = self.load_or_create_seen_ips()
+        #seen_ips_df = self.load_or_create_seen_ips()
 
         # Prepare output filename
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        results_filename = os.path.join(output_dir, f'shodan_results_monty.csv')
-        ips_filename = self.ips_file
+        results_filename = os.path.join(output_dir, f'shodan_results.csv')
+        #ips_filename = self.ips_file
 
         # Collect and process results
         all_results_df = pd.DataFrame()
@@ -317,11 +318,11 @@ class ShodanQueryManager:
             all_results_df = pd.concat([all_results_df, query_results_df], ignore_index=True)
 
         # Update seen IPs and get set of previously seen IPs
-        updated_seen_ips_df, previously_seen_ips = self.update_seen_ips(all_results_df, seen_ips_df)
+        #updated_seen_ips_df, previously_seen_ips = self.update_seen_ips(all_results_df, seen_ips_df)
 
         # Filter out previously seen IPs from results
         #new_results_df = all_results_df[~all_results_df['ip'].isin(previously_seen_ips)]
-        new_results_df = all_results_df.copy()
+        new_results_df = all_results_df
 
         # Save results and updated IP tracking
         try:
@@ -344,13 +345,14 @@ class ShodanQueryManager:
                 print("No new results found")
 
             # Save updated seen IPs
-            updated_seen_ips_df.to_csv(ips_filename, index=False)
-            logging.info(f"Updated seen IPs written to {ips_filename}")
+            #updated_seen_ips_df.to_csv(ips_filename, index=False)
+            #logging.info(f"Updated seen IPs written to {ips_filename}")
 
         except Exception as e:
             logging.error(f"Error saving results or IP tracking: {e}")
 
-        return new_results_df, updated_seen_ips_df
+        #return new_results_df, updated_seen_ips_df
+        return new_results_df
 
 def main():
     # Parse command-line arguments
@@ -358,14 +360,15 @@ def main():
     parser.add_argument('--apikey', required=True, help='Shodan API Key')
     parser.add_argument('--queries', default='queries.json', help='Path to queries JSON file')
     parser.add_argument('--output', default='shodan_results', help='Output directory')
-    parser.add_argument('--ipsfile', default='seen_ips.csv', help='Path to seen IPs tracking file')
+    #parser.add_argument('--ipsfile', default='seen_ips.csv', help='Path to seen IPs tracking file')
     parser.add_argument('--projectlabel', help='Optional project label for results')
 
     args = parser.parse_args()
 
     try:
         # Initialize and run queries
-        query_manager = ShodanQueryManager(args.apikey, args.ipsfile, args.projectlabel)
+        #query_manager = ShodanQueryManager(args.apikey, args.ipsfile, args.projectlabel)
+        query_manager = ShodanQueryManager(args.apikey, args.projectlabel)
         query_manager.run_queries(args.queries, args.output)
 
     except Exception as e:
