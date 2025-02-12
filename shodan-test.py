@@ -1,79 +1,59 @@
 import argparse
-import shodan
+import requests
 import time
 
-def test_shodan_query(api_key, query_str):
-    api = shodan.Shodan(api_key)
-    try:
-        total_results = []
-        unique_ips = set()
-        
-        # Get first page to check total available
-        initial_results = api.search(query_str, page=1, limit=100, minify=False)
-        total_available = initial_results.get('total', 0)
-        print(f"Total results available: {total_available}")
-        
-        # Process first page results
-        for match in initial_results.get('matches', []):
-            ip = match.get('ip_str', '')
-            if ip and ip not in unique_ips:
-                unique_ips.add(ip)
-                total_results.append(match)
-        
-        print(f"Page 1: Found {len(initial_results.get('matches', []))} results, {len(unique_ips)} unique IPs")
-        
-        # Get remaining pages up to 1000 results or no more results
-        current_page = 2
-        while len(total_results) < 1000 and current_page <= 10:
-            time.sleep(1)  # Rate limit
-            try:
-                print(f"\nGetting page {current_page}")
-                results = api.search(query_str, page=current_page, limit=100, minify=False)
-                matches = results.get('matches', [])
-                
-                if not matches:
-                    print("No more results available")
-                    break
-                    
-                for match in matches:
-                    ip = match.get('ip_str', '')
-                    if ip and ip not in unique_ips:
-                        unique_ips.add(ip)
-                        total_results.append(match)
-                        if len(total_results) >= 1000:
-                            break
-                
-                print(f"Page {current_page}: Found {len(matches)} results, Total unique IPs: {len(unique_ips)}")
-                current_page += 1
-                
-            except shodan.APIError as e:
-                print(f"Error on page {current_page}: {str(e)}")
-                break
+SHODAN_API_URL = "https://api.shodan.io/shodan/host/search"
 
-        print(f"\nFinal Results:")
-        print(f"Total unique IPs collected: {len(unique_ips)}")
-        
-        for i, match in enumerate(total_results, 1):
-            print(f"\nResult {i}:")
-            print(f"IP: {match.get('ip_str', '')}")
-            print(f"Port: {match.get('port', '')}")
-            print(f"Country: {match.get('location', {}).get('country_name', '')}")
-            print(f"Org: {match.get('org', '')}")
-            print(f"ISP: {match.get('isp', '')}")
-            print(f"Hostnames: {match.get('hostnames', [])}")
+def shodan_search(api_key, query):
+    unique_ips = set()
+    page = 1
+    total_results = 0
 
-    except Exception as e:
-        print(f"Error: {str(e)}")
-        return False
+    while True:
+        params = {
+            "key": api_key,
+            "query": query,
+            "page": page
+        }
 
-    return True
+        response = requests.get(SHODAN_API_URL, params=params)
 
-def main():
-    parser = argparse.ArgumentParser(description='Test Shodan Query')
-    parser.add_argument('--apikey', required=True, help='Shodan API Key')
-    parser.add_argument('--query', required=True, help='Shodan query to test')
-    args = parser.parse_args()
-    test_shodan_query(args.apikey, args.query)
+        if response.status_code != 200:
+            print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
+            break
+
+        data = response.json()
+
+        if "matches" not in data:
+            print("No results found.")
+            break
+
+        if page == 1:
+            total_results = data.get("total", 0)
+            print(f"Total Results: {total_results}")
+            total_pages = (total_results // 100) + (1 if total_results % 100 > 0 else 0)
+            print(f"Total Pages: {total_pages}")
+
+        for result in data["matches"]:
+            unique_ips.add(result["ip_str"])
+
+        print(f"Page {page} processed. Total unique IPs so far: {len(unique_ips)}")
+
+        if len(data["matches"]) < 100:  # Last page reached
+            break
+
+        page += 1
+        time.sleep(1)  # Rate limiting to avoid API bans
+
+    print("\nFinal Results:")
+    print(f"Total Unique IPs Found: {len(unique_ips)}")
+    for ip in unique_ips:
+        print(ip)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Shodan API Search Script")
+    parser.add_argument("api_key", type=str, help="Your Shodan API Key")
+    parser.add_argument("query", type=str, help="Search query for Shodan")
+    args = parser.parse_args()
+
+    shodan_search(args.api_key, args.query)
