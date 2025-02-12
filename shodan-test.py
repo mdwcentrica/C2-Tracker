@@ -12,11 +12,11 @@ def test_shodan_query(api_key, query_str):
         
         # Initialize empty list for all results
         total_results = []
-        
+
         # Get up to 10 pages of 100 results each
         for page in range(1, 11):
             print(f"\nFetching page {page}...")
-            response = api.search(query_str, page=page, limit=100)
+            response = api.search(query_str, page=page, limit=100, fields=['ip_str', 'port', 'location.country_name', 'org', 'isp', 'hostnames'])
             
             matches = response.get('matches', [])
             total_results.extend(matches)
@@ -26,13 +26,17 @@ def test_shodan_query(api_key, query_str):
             # If we got less than 100 results, we've hit the end
             if len(matches) < 100:
                 break
-        
+
         print(f"\nTotal results collected: {len(total_results)}")
-        
-        if matches:
-            print("\nFirst match details:")
-            for key, value in matches[0].items():
-                print(f"{key}: {value}")
+        print("\nAll results:")
+        for i, match in enumerate(total_results, 1):
+            print(f"\nResult {i}:")
+            print(f"IP: {match.get('ip_str', '')}")
+            print(f"Port: {match.get('port', '')}")
+            print(f"Country: {match.get('location', {}).get('country_name', '')}")
+            print(f"Org: {match.get('org', '')}")
+            print(f"ISP: {match.get('isp', '')}")
+            print(f"Hostnames: {match.get('hostnames', [])}")
         
         return True
         
