@@ -10,18 +10,24 @@ def test_shodan_query(api_key, query_str):
         # Print the query we're testing
         print(f"\nTesting query: {query_str}")
         
-        # Attempt the search
-        print("\nAttempting API call...")
-        response = api.search(query_str, page=1, limit=1)
+        # Initialize empty list for all results
+        total_results = []
         
-        # Print raw response details
-        print("\nResponse details:")
-        print(f"Total results reported: {response.get('total', 0)}")
-        print(f"Response type: {type(response)}")
+        # Get up to 10 pages of 100 results each
+        for page in range(1, 11):
+            print(f"\nFetching page {page}...")
+            response = api.search(query_str, page=page, limit=100)
+            
+            matches = response.get('matches', [])
+            total_results.extend(matches)
+            
+            print(f"Found {len(matches)} results on this page")
+            
+            # If we got less than 100 results, we've hit the end
+            if len(matches) < 100:
+                break
         
-        # Print first few matches if they exist
-        matches = response.get('matches', [])
-        print(f"\nNumber of matches in response: {len(matches)}")
+        print(f"\nTotal results collected: {len(total_results)}")
         
         if matches:
             print("\nFirst match details:")
