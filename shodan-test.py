@@ -2,59 +2,87 @@ import argparse
 import requests
 import time
 
-SHODAN_API_URL = "https://api.shodan.io/shodan/host/search"
-RESULTS_PER_PAGE = 100  # Shodan returns max 100 results per page
+SHODAN_COUNT_URL = "https://api.shodan.io/shodan/host/count"
+SHODAN_SEARCH_URL = "https://api.shodan.io/shodan/host/search"
+RESULTS_PER_PAGE = 100  # Shodan returns up to 100 results per page
+SLEEP_TIME = 2  # Adjust sleep to avoid API rate limits
+
+def get_total_results(api_key, query):
+    """ Get total results count from Shodan """
+    params = {"key": api_key, "query": query}
+    response = requests.get(SHODAN_COUNT_URL, params=params)
+
+    if response.status_code == 200:
+        return response.json().get("total", 0)
+    
+    print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
+    return 0
 
 def shodan_search(api_key, query):
-    unique_ips = set()
-    page = 1
-    total_results = 0
+    """ Perform paginated Shodan search and collect unique results """
+    unique_ips = {}
+    total_results = get_total_results(api_key, query)
+    
+    if total_results == 0:
+        print("No results found.")
+        return
 
-    while True:
-        print(f"Fetching page {page}...")
+    total_pages = (total_results // RESULTS_PER_PAGE) + (1 if total_results % RESULTS_PER_PAGE > 0 else 0)
+    print(f"Total Results: {total_results}")
+    print(f"Paging through {total_pages} pages...\n")
+
+    for page in range(1, total_pages + 1):
+        print(f"Fetching Page {page}/{total_pages}...")
+
         params = {
             "key": api_key,
             "query": query,
             "page": page
         }
 
-        response = requests.get(SHODAN_API_URL, params=params)
-
+        response = requests.get(SHODAN_SEARCH_URL, params=params)
+        
         if response.status_code != 200:
             print(f"Error {response.status_code}: {response.json().get('error', 'Unknown error')}")
             break
 
         data = response.json()
-
-        if page == 1:  # Only retrieve total count on first page
-            total_results = data.get("total", 0)
-            total_pages = (total_results // RESULTS_PER_PAGE) + (1 if total_results % RESULTS_PER_PAGE > 0 else 0)
-            print(f"🔹 Total Results: {total_results}")
-            print(f"🔹 Total Pages: {total_pages}")
-
         matches = data.get("matches", [])
+
         if not matches:
-            print("🚨 No more results available. Exiting loop.")
+            print("No more results available.")
             break
 
-        # Add IPs to the set (ensuring uniqueness)
-        for result in matches:
-            unique_ips.add(result["ip_str"])
+        for match in matches:
+            ip = match.get("ip_str", "")
+            if ip and ip not in unique_ips:  # Store first occurrence only
+                unique_ips[ip] = {
+                    "IP": ip,
+                    "Port": match.get("port", ""),
+                    "Country": match.get("location", {}).get("country_name", ""),
+                    "Org": match.get("org", ""),
+                    "ISP": match.get("isp", ""),
+                    "Hostnames": match.get("hostnames", [])
+                }
 
-        print(f"✅ Processed Page {page}. Total unique IPs collected: {len(unique_ips)}")
-
-        # Stop if we reach the last page
+        print(f"Collected {len(unique_ips)} unique IPs so far.")
+        
+        # Stop if this was the last page of results
         if len(matches) < RESULTS_PER_PAGE:
-            print("🚀 Last page reached. Exiting pagination.")
             break
 
-        page += 1
-        time.sleep(1)  # Respect API rate limits
+        time.sleep(SLEEP_TIME)  # Respect API limits
 
-    print("\n🎯 Final Results:")
-    print(f"🔹 Total Unique IPs Found: {len(unique_ips)}")
-    for ip in sorted(unique_ips):
-        print(ip)
+    print("\nFinal Results:")
+    print(f"Total Unique IPs Found: {len(unique_ips)}\n")
+
+    for details in unique_ips.values():
+        print(f"IP: {details['IP']}")
+        print(f"Port: {details['Port']}")
+        print(f"Country: {details['Country']}")
+        print(f"Org: {details['Org']}")
+        print(f"ISP: {details['ISP']}")
+        print(f"Hostnames: {details['Hostnames']}\n")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Shodan API Search Script")
