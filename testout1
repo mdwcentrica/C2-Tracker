@@ -1,0 +1,400 @@
+
+Testing query: product:Mythic
+
+Total results available according to Shodan: 143
+
+Fetching page 1...
+Found 98 results on page 1
+Unique IPs so far: 44
+
+Fetching page 2...
+Found 98 results on page 2
+Unique IPs so far: 44
+
+Fetching page 3...
+Found 98 results on page 3
+Unique IPs so far: 44
+
+Fetching page 4...
+Found 98 results on page 4
+Unique IPs so far: 44
+
+Fetching page 5...
+Found 98 results on page 5
+Unique IPs so far: 44
+
+Fetching page 6...
+Found 98 results on page 6
+Unique IPs so far: 44
+
+Fetching page 7...
+Found 98 results on page 7
+Unique IPs so far: 44
+
+Fetching page 8...
+Found 98 results on page 8
+Unique IPs so far: 44
+
+Fetching page 9...
+Found 98 results on page 9
+Unique IPs so far: 44
+
+Fetching page 10...
+Found 98 results on page 10
+Unique IPs so far: 44
+
+Final total unique IPs collected: 44
+
+Showing all unique results:
+
+Result 1:
+IP: 185.208.158.217
+Port: 7443
+Country: Switzerland
+Org: Global-Data System IT Corporation
+ISP: Global-Data System IT Corporation
+Hostnames: []
+
+Result 2:
+IP: 152.89.92.204
+Port: 7443
+Country: Germany
+Org: WIIT AG
+ISP: MYLOC ENTERPRISE
+Hostnames: []
+
+Result 3:
+IP: 67.219.111.218
+Port: 7443
+Country: Australia
+Org: The Constant Company, LLC
+ISP: The Constant Company, LLC
+Hostnames: ['67.219.111.218.vultrusercontent.com']
+
+Result 4:
+IP: 138.197.156.131
+Port: 7443
+Country: Canada
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 5:
+IP: 207.180.224.247
+Port: 7443
+Country: Germany
+Org: Contabo GmbH
+ISP: Contabo GmbH
+Hostnames: ['vmi1625217.contaboserver.net']
+
+Result 6:
+IP: 159.223.0.196
+Port: 7443
+Country: Netherlands
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 7:
+IP: 43.134.38.211
+Port: 7443
+Country: Singapore
+Org: Asia Pacific Network Information Center, Pty. Ltd.
+ISP: Tencent Building, Kejizhongyi Avenue
+Hostnames: []
+
+Result 8:
+IP: 198.7.121.101
+Port: 7443
+Country: Germany
+Org: Contabo GmbH
+ISP: Contabo GmbH
+Hostnames: ['vmi1972939.contaboserver.net']
+
+Result 9:
+IP: 161.35.218.205
+Port: 7443
+Country: Germany
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 10:
+IP: 45.76.30.116
+Port: 7443
+Country: United States
+Org: Vultr Holdings, LLC
+ISP: The Constant Company, LLC
+Hostnames: ['45.76.30.116.vultrusercontent.com']
+
+Result 11:
+IP: 195.100.198.220
+Port: 7443
+Country: Netherlands
+Org: BT Ethical Hacking Center Of Excellence
+ISP: British Telecommunications PLC
+Hostnames: []
+
+Result 12:
+IP: 164.90.158.199
+Port: 7443
+Country: United States
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 13:
+IP: 103.69.194.227
+Port: 7443
+Country: Viet Nam
+Org: Soha Company Limited
+ISP: VIETNAM POSTS AND TELECOMMUNICATIONS GROUP
+Hostnames: []
+
+Result 14:
+IP: 188.120.254.229
+Port: 7443
+Country: Russian Federation
+Org: JSC IOT
+ISP: JSC IOT
+Hostnames: ['olimpltd.fvds.ru']
+
+Result 15:
+IP: 64.227.48.216
+Port: 7443
+Country: United States
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 16:
+IP: 64.23.213.61
+Port: 7443
+Country: United States
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 17:
+IP: 212.51.144.135
+Port: 7443
+Country: Switzerland
+Org: modzero AG
+ISP: Init7 (Switzerland) Ltd.
+Hostnames: ['212-51-144-135.fiber7.init7.net']
+
+Result 18:
+IP: 4.197.169.184
+Port: 7443
+Country: Australia
+Org: Microsoft Corporation
+ISP: Microsoft Corporation
+Hostnames: []
+
+Result 19:
+IP: 8.155.8.190
+Port: 7443
+Country: China
+Org: Aliyun Computing Co.LTD
+ISP: Hangzhou Alibaba Advertising Co.,Ltd.
+Hostnames: []
+
+Result 20:
+IP: 107.172.159.50
+Port: 7443
+Country: United States
+Org: RackNerd LLC
+ISP: HostPapa
+Hostnames: ['107-172-159-50-host.colocrossing.com']
+
+Result 21:
+IP: 64.226.91.107
+Port: 7443
+Country: Germany
+Org: DigitalOcean, LLC
+ISP: DigitalOcean, LLC
+Hostnames: []
+
+Result 22:
+IP: 45.33.110.200
+Port: 7443
+Country: United States
+Org: Linode
+ISP: Akamai Connected Cloud
+Hostnames: ['45-33-110-200.ip.linodeusercontent.com']
+
+Result 23:
+IP: 62.109.30.217
+Port: 7443
+Country: Russian Federation
+Org: JSC Datacenter
+ISP: JSC IOT
+Hostnames: ['olimpltd.fvds.ru']
+
+Result 24:
+IP: 145.131.8.169
+Port: 7443
+Country: Netherlands
+Org: Argeweb B.V.
+ISP: Accenture B. V.
+Hostnames: ['ahv-id-28443.vps.awcloud.nl']
+
+Result 25:
+IP: 185.43.4.80
+Port: 7443
+Country: Russian Federation
+Org: JSC Datacenter
+ISP: JSC IOT
+Hostnames: ['olimpltd.fvds.ru']
+
+Result 26:
+IP: 176.31.162.105
+Port: 7443
+Country: France
+Org: OVH SAS
+ISP: OVH SAS
+Hostnames: ['vps-84323c44.vps.ovh.net']
+
+Result 27:
+IP: 27.106.122.172
+Port: 7443
+Country: Hong Kong
+Org: Huawei-Cloud-HK
+ISP: HUAWEI CLOUDS
+Hostnames: []
+
+Result 28:
+IP: 80.87.199.167
+Port: 7443
+Country: Russian Federation
+Org: JSC Datacenter
+ISP: JSC IOT
+Hostnames: ['olimpltd.fvds.ru']
+
+Result 29:
+IP: 77.223.100.85
+Port: 7443
+Country: Russian Federation
+Org: Selectel Network
+ISP: JSC Selectel
+Hostnames: []
+
+Result 30:
+IP: 129.211.212.43
+Port: 8443
+Country: China
+Org: Tencent Cloud Computing (Beijing) Co., Ltd
+ISP: Shenzhen Tencent Computer Systems Company Limited
+Hostnames: []
+
+Result 31:
+IP: 13.201.109.246
+Port: 7443
+Country: India
+Org: Amazon Data Services India
+ISP: Amazon.com, Inc.
+Hostnames: ['ec2-13-201-109-246.ap-south-1.compute.amazonaws.com']
+
+Result 32:
+IP: 36.133.19.224
+Port: 7443
+Country: China
+Org: China Mobile Communications Corporation
+ISP: China Mobile communications corporation
+Hostnames: []
+
+Result 33:
+IP: 45.15.162.116
+Port: 7443
+Country: Czechia
+Org: STARK INDUSTRIES SOLUTIONS LTD
+ISP: STARK INDUSTRIES SOLUTIONS LTD
+Hostnames: []
+
+Result 34:
+IP: 102.117.167.122
+Port: 7443
+Country: Mauritius
+Org: Mauritius Telecom Ltd
+ISP: Mauritius Telecom Ltd
+Hostnames: []
+
+Result 35:
+IP: 154.38.167.90
+Port: 7443
+Country: United States
+Org: Contabo Inc
+ISP: Nubes, LLC
+Hostnames: ['vmi1509423.contaboserver.net']
+
+Result 36:
+IP: 46.8.237.108
+Port: 8443
+Country: Finland
+Org: CGI GLOBAL LIMITED
+ISP: CGI GLOBAL LIMITED
+Hostnames: []
+
+Result 37:
+IP: 135.125.9.127
+Port: 7443
+Country: France
+Org: OVH SAS
+ISP: OVH SAS
+Hostnames: ['ns3186683.ip-135-125-9.eu']
+
+Result 38:
+IP: 80.87.206.175
+Port: 7443
+Country: France
+Org: Alliance LLC
+ISP: OVH SAS
+Hostnames: []
+
+Result 39:
+IP: 172.232.190.135
+Port: 7443
+Country: United States
+Org: Linode
+ISP: Akamai Connected Cloud
+Hostnames: ['172-232-190-135.ip.linodeusercontent.com']
+
+Result 40:
+IP: 117.215.247.241
+Port: 9943
+Country: India
+Org: Broadband Multiplay Project, O/o DGM BB, NOC BSNL Bangalore
+ISP: National Internet Backbone
+Hostnames: []
+
+Result 41:
+IP: 182.60.5.9
+Port: 4444
+Country: India
+Org: Mahanagar Telephone Nigam Limited
+ISP: National Internet Backbone
+Hostnames: ['static-mum-182.60.5.9.mtnl.net.in']
+
+Result 42:
+IP: 182.60.11.201
+Port: 10443
+Country: India
+Org: Mahanagar Telephone Nigam Limited
+ISP: National Internet Backbone
+Hostnames: ['static-mum-182.60.11.201.mtnl.net.in']
+
+Result 43:
+IP: 188.127.235.109
+Port: 7443
+Country: Russian Federation
+Org: LLC Smart Ape
+ISP: LLC Smart Ape
+Hostnames: ['croissant.server']
+
+Result 44:
+IP: 182.60.9.165
+Port: 2083
+Country: India
+Org: Mahanagar Telephone Nigam Limited
+ISP: National Internet Backbone
+Hostnames: ['static-mum-182.60.9.165.mtnl.net.in']
