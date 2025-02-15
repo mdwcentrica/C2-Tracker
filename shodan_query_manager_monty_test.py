@@ -141,7 +141,7 @@ def main():
     parser.add_argument("--projectlabel", help="Optional project label for results")
 
     args = parser.parse_args()
-
+    print("script starting")
     try:
         query_manager = ShodanQueryManager(args.apikey, args.projectlabel)
         query_manager.run_queries(args.queries, args.output)
