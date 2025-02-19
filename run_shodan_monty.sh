@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # Set script directory
-SCRIPT_DIR="/home/azureuser/scripts"
-SCRIPT_FILE="${SCRIPT_DIR}/shodan_query_manager_monty.py"
 PROJECT_DIR="/home/azureuser/projects/Monty"
+SCRIPT_FILE="${PROJECT_DIR}/shodan_query_manager_monty_v1.2.py"
 DATA_DIR="${PROJECT_DIR}/data"
 QUERIES_DIR="${PROJECT_DIR}/queries/shodan/formatted"
 QUERIES_FILE="${QUERIES_DIR}/formatted_shodan_queries"
