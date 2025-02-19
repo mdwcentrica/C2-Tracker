@@ -29,7 +29,7 @@ cd ${PROJECT_DIR}
 git pull --rebase origin centrica_fork_queries
 cd ${OLD_SCRIPTS_DIR}
 source advinfra_env/bin/activate
-python3 "${SCRIPT_FILE}" --apikey "$SHODAN_API_KEY" --projectlabel "CTI-IOA" --queries "${QUERIES_FILE}" --outputdir "$DATA_DIR" --outputfile "shodan_results.csv" 2>&1 | tee -a "${LOG_DIR}/shodan_${DATE}.log"
+python3 "${SCRIPT_FILE}" --apikey "$SHODAN_API_KEY" --queries "${QUERIES_FILE}" --outputdir "$DATA_DIR" --outputfile "shodan_results.csv" 2>&1 | tee -a "${LOG_DIR}/shodan_${DATE}.log"
 cd ${PROJECT_DIR}
 git add .
 git commit -m "Automated cron triggered update: ${DATE}"
